@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guess the Number - Modern Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-card">
+            <header class="game-header">
+                <h1 class="game-title">🎯 Guess the Number</h1>
+                <p class="game-subtitle">Can you find the secret number between 1 and 100?</p>
+            </header>
+
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Attempts</span>
+                    <span class="stat-value" id="attempts">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Remaining</span>
+                    <span class="stat-value" id="remaining">10</span>
+                </div>
+            </div>
+
+            <form class="guess-form" id="guessForm">
+                <div class="input-group">
+                    <label for="guessInput" class="input-label">Your Guess</label>
+                    <input 
+                        type="number" 
+                        id="guessInput" 
+                        class="guess-input" 
+                        placeholder="Enter a number..."
+                        min="1" 
+                        max="100" 
+                        required
+                    >
+                </div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Check Guess</span>
+                </button>
+            </form>
+
+            <div class="feedback-section">
+                <div class="message-container">
+                    <p class="feedback-message" id="feedbackMessage">Ready to play? Enter your first guess!</p>
+                </div>
+                
+                <div class="previous-guesses">
+                    <h3 class="guesses-title">Previous Guesses</h3>
+                    <div class="guesses-list" id="guessesList"></div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <button class="reset-btn" id="resetBtn" style="display: none;">
+                    <span class="btn-text">Play Again</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
